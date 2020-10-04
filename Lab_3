@@ -1,0 +1,60 @@
+using System;
+
+namespace Adel_13
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double w, h, b, q, y, g;
+
+            Console.Write("Введите w: ");
+            w = Convert.ToSingle(Console.ReadLine());
+
+            Console.Write("Введите h: ");
+            h = Convert.ToSingle(Console.ReadLine());
+
+            Console.Write("Введите b: ");
+            b = Convert.ToSingle(Console.ReadLine());
+
+            Console.Write("Введите q: ");
+            q = Convert.ToSingle(Console.ReadLine());
+
+            Console.Write("Введите y: ");
+            y = Convert.ToSingle(Console.ReadLine());
+
+            g= Math.Sqrt(w*h)* Math.Abs(b) * q*3 - Math.Cos(q * 3) + (y / w);
+
+            string result = String.Format("{0:C}", g);
+            Console.WriteLine("Ответ в денежном формате: " + result);
+
+            int p = Convert.ToInt32(g);
+
+            result = String.Format("{0:D}", p);
+            Console.WriteLine("Ответ в десятичном формате: " + result);
+
+            result = String.Format("{0:E2}", g);
+            Console.WriteLine("Ответ в экспоненциальном формате: " + result);
+
+            result = String.Format("{0:F2}", g);
+            Console.WriteLine("Ответ в формате с фиксированной запятой: " + result);
+
+            result = String.Format("{0:G2}", g);
+            Console.WriteLine("Ответ в общем формате: " + result);
+
+            result = String.Format("{0:N2}", g);
+            Console.WriteLine("Ответ в числовом формате: " + result);
+
+            decimal o = Convert.ToDecimal(g);
+
+            result = String.Format("{0:P1}", o);
+            Console.WriteLine("Ответ в прорцентном формате: " + result);
+
+            int l = Convert.ToInt32(g);
+
+            result = String.Format("{0:X}", l);
+            Console.WriteLine("Ответ в шестнадцатиричном формате: " + result);
+
+        }
+    }
+}
