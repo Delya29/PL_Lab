@@ -1,0 +1,48 @@
+using System;
+
+namespace Adel_17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double X, Y, s;
+            int powerX, powerY, q1, q2, i;
+            bool Stop = false;
+            int number;
+            i = 1;
+            s = 0;
+            powerX = 2;
+            powerY = 2;
+            q1 = 1;
+            q2 = 3;
+            Console.Write("Введите X: ");
+            X = Convert.ToSingle(Console.ReadLine());
+            Console.Write("Введите Y: ");
+            Y = Convert.ToSingle(Console.ReadLine());
+            do
+            {
+                if (i % 2 == 0)
+                {
+                    s += (X * Math.Pow(Y, powerY)) / (q1 * q2);
+                    powerX += 2;
+                    q1 += 1;
+                    q2 += 1;
+                }
+                else
+                {
+                    s -= (Y * Math.Pow(X, powerX)) / (q1 * q2);
+                    powerX += 2;
+                    q1 += 1;
+                    q2 += 1;
+                }
+                Console.WriteLine("Ответ: {0:F3}", s);
+                i++;
+                Console.WriteLine("Введите для продолжения 1, для выхода 0: ");
+                number = Convert.ToInt32(Console.ReadLine());
+                if (number == 0)
+                    Stop = true;
+            } while (!Stop);
+        }
+    }
+}
